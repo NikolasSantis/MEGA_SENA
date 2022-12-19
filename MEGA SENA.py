@@ -8,11 +8,14 @@ print(f'\n {"SORTEANDO NUMEROS":-^42}')
 jogos = []
 t = [] 
 for c in range(0, tot):
-    for k in range(0,6):
-        t.append(randint(0,60))
+    while len(t) <= 5:
+        aju = randint(0,60)
+        if aju not in t:
+            t.append(aju)
     t.sort()
     jogos.append(t[:])
     t.clear()
+    sleep(0.7)
     print(f'Jogo {c+1}: {jogos[c]}')
 print('--'*21)
 print(f'{"  BOA SORTE!  ":=^42}')
